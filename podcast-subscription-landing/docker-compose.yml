@@ -1,0 +1,12 @@
+#docker-compose up -d
+version: "3"
+
+services:
+  subs-page-podcast-ionic:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: kmom/subscription-podcast-app:1.1
+    container_name: blogwebappfirebase
+    ports:
+      - "80:80"

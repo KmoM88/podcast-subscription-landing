@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "podcast-subscription-landing"
+  },
+  "targets": {
+    "podcast-subscription-landing": {
+      "hosting": {
+        "app": [
+          "podcast-subscription-landing"
+        ]
+      }
+    }
+  }
+}

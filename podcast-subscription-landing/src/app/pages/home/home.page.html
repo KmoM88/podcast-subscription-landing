@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-start">
+      <ion-label>Home</ion-label>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-lg></ion-col>
+      <ion-col size="12" size-lg>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">220 Podcast</ion-card-title>
+            <ion-card-subtitle class="ion-text-center">El sitio no oficial</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content class="ion-text-center">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" size-sm></ion-col>
+                <ion-col size="12" size-sm>
+                  <ion-img src="/assets/miniatura.jpg" alt="logo" ></ion-img>
+                </ion-col>
+                <ion-col size="12" size-sm></ion-col>
+              </ion-row>
+            </ion-grid>
+            Hola, somos Nico y Tomi, seguramente nos conozcas de podcasts como 220. Si viniste hasta acá debe ser que te interesa esto que hacemos y eso ya es mucho. 220 Podcast empezó como una forma de romper el aislamiento mental de la pandemia. Aprovechando que no lo hacemos en un medio tradicional, tratamos de que haya honestidad. Empezamos con la idea de tirar una botella con un mensaje al mar pero alrededor de esto se armó una sensación de comunidad y eso es lo que más nos importa. Y mangueamos plata porque necesitamos buscar la forma de financiar nuestro trabajo. ¨Los medios¨ se transformaron un poco en esto y en algún sentido está muy bien. Con un poco de pudor creamos suscripciones mensuales con tarjeta y aportes de una vez. Si podés aportar algo a la causa y que no te genere un problema financiero sabé que lo vamos a valorar mucho. Qué viva la autogestión, el núcleo duro y la internet!
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-lg></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list>
+    <ion-text class="ion-text-center">
+      <h4>Suscripciones mensuales</h4>
+    </ion-text>
+    <ion-item [href]="url_3" color="primary">
+      <ion-thumbnail slot="start">
+        <ion-img src="/assets/logo.jpg" alt="logo"></ion-img>
+      </ion-thumbnail>
+      <ion-label>Núcleo Duro</ion-label>
+      <ion-text slot="end">$300</ion-text>
+    </ion-item>
+    <ion-item [href]="url_5" color="primary">
+      <ion-thumbnail slot="start">
+        <ion-img src="/assets/logo.jpg" alt="logo"></ion-img>
+      </ion-thumbnail>
+      <ion-label>Núcleo Mas Duro</ion-label>
+      <ion-text slot="end">$500</ion-text>
+    </ion-item>
+    <ion-item [href]="url_8" color="primary">
+      <ion-thumbnail slot="start">
+        <ion-img src="/assets/logo.jpg" alt="logo"></ion-img>
+      </ion-thumbnail>
+      <ion-label>Producción Ejecutiva</ion-label>
+      <ion-text slot="end">$800</ion-text>
+    </ion-item>
+  </ion-list>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="4">
+        <a [href]="url_avatar_nico">
+          <ion-avatar style="margin: auto">
+            <img src="/assets/avatar_nico.jpg" alt="avatar">
+          </ion-avatar>
+        </a>
+      </ion-col>
+      <ion-col size="4">
+        <a [href]="url_avatar_canal">
+          <ion-avatar style="margin: auto">
+            <img src="/assets/avatar_canal.png" alt="avatar">
+          </ion-avatar>
+        </a>
+      </ion-col>
+      <ion-col size="4">
+        <a [href]="url_avatar_tomas">
+          <ion-avatar style="margin: auto">
+            <img src="/assets/avatar_tomas.jpg" alt="avatar">
+          </ion-avatar>
+        </a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-text>
+    <h6>
+      220 Podcast - © 2011
+    </h6>
+  </ion-text>
+</ion-content>
+
+<ion-footer class="ion-no border">
+  <ion-toolbar>
+    <ion-text>
+      <ion-title>
+        <p>||Design||KmoM <a href="https://kmom88.github.io/KmoM-Dev1/">愛</a>||</p>
+      </ion-title>
+    </ion-text>
+  </ion-toolbar>
+</ion-footer>
+
