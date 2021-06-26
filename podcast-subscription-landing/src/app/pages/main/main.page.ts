@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { ItemService } from './../../services/item.service';
-import { Item } from './../../interfaces/Item';
+import { Item } from './../../interfaces/item';
 
 @Component({
   selector: 'app-main',
@@ -22,5 +22,4 @@ export class MainPage implements OnInit {
   ngOnInit() {
     this.menuItems = this.itemService.getMenuItems();
   }
-
 }

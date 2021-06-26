@@ -3,6 +3,14 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-start" text-capitalize>{{ titulo }}</ion-title>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="/assets/logo.jpg">
+      </ion-avatar>
+      <ion-label>
+        <h1>220 Podcast</h1>
+        <h2>{{ titulo }}</h2>
+      </ion-label>
+    </ion-item>
   </ion-toolbar>
 </ion-header>

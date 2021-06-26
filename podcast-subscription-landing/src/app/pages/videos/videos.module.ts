@@ -1,3 +1,4 @@
+import { PipesModule } from './../../pipes/pipes.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -8,12 +9,16 @@ import { VideosPageRoutingModule } from './videos-routing.module';
 
 import { VideosPage } from './videos.page';
 
+import { ComponentsModule } from './../../components/components.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    VideosPageRoutingModule
+    PipesModule,
+    VideosPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [VideosPage]
 })

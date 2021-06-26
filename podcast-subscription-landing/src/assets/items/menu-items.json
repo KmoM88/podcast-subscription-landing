@@ -16,11 +16,5 @@
     "name": "Log In/Log Out",
     "public": "true",
     "redirecTo": "/main/home/login"
-  },
-  {
-    "icon": "log-out-outline",
-    "name": "Log Out",
-    "public": "false",
-    "redirecTo": "/main/home/signup"
   }
 ]

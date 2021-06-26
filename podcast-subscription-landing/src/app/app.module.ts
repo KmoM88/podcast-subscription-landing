@@ -10,6 +10,7 @@ import { AngularFireModule } from '@angular/fire';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PipesModule } from './pipes/pipes.module';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { environment } from '../environments/environment';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    PipesModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
