@@ -32,3 +32,8 @@ export interface Video {
       publishTime: string
   }
 }
+
+export interface VideoList {
+  items: Video[],
+  nextPageToken: string
+}

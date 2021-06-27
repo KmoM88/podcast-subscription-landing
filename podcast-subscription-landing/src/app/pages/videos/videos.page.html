@@ -1,7 +1,7 @@
 <app-header titulo="Videos"></app-header>
 
 <ion-content>
-  <ion-card *ngIf="(this.videosList | async) === null">
+  <ion-card *ngIf="(this.videosListOnline | async) === null">
     <ion-card-header>
       <ion-card-title>No pudimos cargar los videos</ion-card-title>
       <ion-card-subtitle>Visitá nuestro canal de Youtube</ion-card-subtitle>
@@ -14,7 +14,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-item *ngIf="(this.videosList | async)">
+  <ion-item *ngIf="(this.videosListOnline | async)">
     <ion-searchbar  animated
                     debounce="500"
                     placeholder="Buscá episodio favorito"
@@ -22,17 +22,18 @@
                     ></ion-searchbar>
   </ion-item>
   <ion-list no-padding #list>
-    <ion-item-sliding *ngFor="let video of (videosList | async) | filtro: textoSearch">
+    <ion-item-sliding *ngFor="let video of (videosListOnline | async) | filtro: textoSearch">
       <ion-item detail [href]="urlYoutubeVideo + this.video.id.videoId">
+        <button>
+          <ion-thumbnail>
+            <img [src]="video.snippet.thumbnails.default.url" alt="thumbnail video"/>
+          </ion-thumbnail>
+        </button>
         <ion-label>
-          <button>
-            <ion-thumbnail>
-              <img [src]="video.snippet.thumbnails.default.url" alt="thumbnail video"/>
-            </ion-thumbnail>
-          </button>
           <ion-title>
             <ion-text>
               <h2>
+                {{ videosListOnline | async}}
                 {{ video.snippet.title | titlecase}}
               </h2>
               <p>{{ video.snippet.description | titlecase}}</p>
@@ -50,10 +51,10 @@
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
-  <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
     <ion-infinite-scroll-content
       loadingSpinner="bubbles"
       loadingText="Loading more data...">
     </ion-infinite-scroll-content>
-  </ion-infinite-scroll> -->
+  </ion-infinite-scroll>
 </ion-content>
