@@ -1,6 +1,6 @@
 export interface Item {
   icon: string,
   name: string,
-  public: boolean,
+  role: string,
   redirecTo: string
 }

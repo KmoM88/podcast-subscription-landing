@@ -2,25 +2,19 @@
   {
     "icon":"home-outline",
     "name": "Home",
-    "role": "public",
+    "public": "true",
     "redirecTo": "/main"
   },
   {
     "icon": "play-circle-outline",
     "name": "Videos",
-    "role": "public",
+    "public": "false",
     "redirecTo": "/main/home/videos"
   },
   {
     "icon":"terminal-outline",
     "name": "Log In/Log Out",
-    "role": "public",
+    "public": "true",
     "redirecTo": "/main/home/login"
-  },
-  {
-    "icon":"text-outline",
-    "name": "Newsletter",
-    "role": "logged",
-    "redirecTo": "/main/home/newsletter"
   }
 ]

@@ -9,6 +9,7 @@
       <ion-list>
         <ion-menu-toggle autoHide="false" *ngFor="let item of menuItems | async">
           <ion-item
+          *ngIf="((item.role === 'public') || (currentAuthStatus$ | async) !== null)"
           [routerLink]="item.redirecTo"
           routerDirection="root"
           routerLinkActive="active-link"

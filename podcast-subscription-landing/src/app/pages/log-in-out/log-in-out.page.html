@@ -1,5 +1,56 @@
 <app-header titulo="Log In"></app-header>
 
 <ion-content>
-
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="12" size-sm></ion-col>
+    <ion-col size="12" size-sm>
+      <ion-card *ngIf="(currentAuthStatus$ | async) === null">
+        <ion-card-header>
+          <ion-card-title size="large" class="ion-text-center">Entra y enterate de cuando sale un nuevo video</ion-card-title>
+          <ion-card-subtitle size="large" class="ion-text-center">Si no sos subscriptor tenemos algo para vos tmb</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button expand="block" fill="outline" (click)="loginGoogle()">
+            <ion-icon slot="start" name="logo-google"></ion-icon>
+          </ion-button>
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="2">
+                <ion-checkbox></ion-checkbox>
+              </ion-col>
+              <ion-col size="10">
+                <ion-text>
+                  <p>Avisarme al mail cuando hay un capitulo nuevo</p>
+                </ion-text>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="2">
+                <ion-checkbox></ion-checkbox>
+              </ion-col>
+              <ion-col size="10">
+                <ion-text>
+                  <p><a  routerLink='../bases'>(Bases y condiciones)</a></p>
+                </ion-text>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+      <ion-card *ngIf="(currentAuthStatus$ | async) !== null">
+        <ion-card-header>
+          <ion-card-title size="large" class="ion-text-center">Hasta luego</ion-card-title>
+          <ion-card-subtitle size="large" class="ion-text-center">Hasta luego</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+        </ion-card-content>
+        <ion-button expand="block" fill="outline" (click)="logoutGoogle()">
+          Log Out
+        </ion-button>
+      </ion-card>
+    </ion-col>
+    <ion-col size="12" size-sm></ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>
