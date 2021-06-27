@@ -13,7 +13,7 @@
   },
   {
     "icon":"terminal-outline",
-    "name": "Log In/Log Out",
+    "name": "Log In / Log Out",
     "role": "public",
     "redirecTo": "/main/home/login"
   },
@@ -22,5 +22,11 @@
     "name": "Newsletter",
     "role": "logged",
     "redirecTo": "/main/home/newsletter"
+  },
+  {
+    "icon":"chatbox-ellipses-outline",
+    "name": "Chat",
+    "role": "logged",
+    "redirecTo": "/main/home/chat"
   }
 ]

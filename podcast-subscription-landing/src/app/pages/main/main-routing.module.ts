@@ -41,6 +41,12 @@ const routes: Routes = [
         loadChildren: () => import('../newsletter/newsletter.module').then( m => m.NewsletterPageModule),
         canActivate: [AngularFireAuthGuard],
         data: { authGuardPipe: redirectUnauthorizedToLogin}
+      },
+      {
+        path: 'home/chat',
+        loadChildren: () => import('../chat/chat.module').then( m => m.ChatPageModule),
+        canActivate: [AngularFireAuthGuard],
+        data: { authGuardPipe: redirectUnauthorizedToLogin}
       }
     ]
   }

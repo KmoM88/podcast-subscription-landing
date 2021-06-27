@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
@@ -17,6 +17,10 @@ export class LogInOutPage implements OnInit {
     private auth: AuthService
   ) { }
 
+  checkboxs = {
+    isChecked1: false,
+    isChecked2: false
+  }
   currentAuthStatus$: Observable<any>
 
   ngOnInit() {
@@ -24,8 +28,13 @@ export class LogInOutPage implements OnInit {
   }
 
   loginGoogle() {
-    this.auth.loginGoogle()
-    .then(res => console.log(res))
+    if(this.checkboxs.isChecked2){
+      this.auth.loginGoogle()
+      .then(res => console.log(res))
+    }
+    else {
+      console.log("acepte las condiciones")
+    }
   }
 
   logoutGoogle() {
