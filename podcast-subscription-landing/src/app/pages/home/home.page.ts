@@ -32,6 +32,7 @@ export class HomePage implements OnInit {
 
   currentAuthStatus$: Observable<any>
   userData: User
+  urlProfile = "/main/home/profile"
 
   ngOnInit() {
     this.currentAuthStatus$ = this.auth.authStatusListener()

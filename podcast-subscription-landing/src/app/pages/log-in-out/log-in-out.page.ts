@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
-import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 

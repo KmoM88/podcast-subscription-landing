@@ -13,7 +13,7 @@
         <h2>Home</h2>
       </ion-label>
     </ion-item>
-    <ion-chip slot="end" *ngIf="((currentAuthStatus$ | async) !== null) && (userData !== undefined)">
+    <ion-chip [routerLink]="urlProfile" slot="end" *ngIf="((currentAuthStatus$ | async) !== null) && (userData !== undefined)">
       <ion-avatar>
         <img [src]="userData.additionalUserInfo.profile.picture" alt="avatar user">
       </ion-avatar>

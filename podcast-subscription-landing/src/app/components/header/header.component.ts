@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/interfaces/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -15,11 +16,13 @@ export class HeaderComponent implements OnInit {
   @Input() titulo: string;
 
   constructor(
+    private router: Router,
     private auth: AuthService
   ) { }
 
   currentAuthStatus$: Observable<any>
   userData: User
+  urlProfile = "/main/home/profile"
 
   ngOnInit() {
     this.currentAuthStatus$ = this.auth.authStatusListener()
@@ -32,6 +35,11 @@ export class HeaderComponent implements OnInit {
         }
       }
     )
+  }
+
+  onClick() {
+    console.log('test')
+    this.router.navigate['/main/profile']
   }
 
 }

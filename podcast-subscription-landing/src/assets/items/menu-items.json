@@ -28,5 +28,11 @@
     "name": "Chat",
     "role": "logged",
     "redirecTo": "/main/home/chat"
+  },
+  {
+    "icon":"person-circle-outline",
+    "name": "Perfil",
+    "role": "logged",
+    "redirecTo": "/main/home/profile"
   }
 ]
