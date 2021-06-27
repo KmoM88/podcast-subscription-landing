@@ -24,12 +24,12 @@
   <ion-list no-padding #list>
     <ion-item-sliding *ngFor="let video of (videosList | async) | filtro: textoSearch">
       <ion-item detail [href]="urlYoutubeVideo + this.video.id.videoId">
-        <button>
-          <ion-thumbnail>
-            <img [src]="video.snippet.thumbnails.default.url" alt="thumbnail video"/>
-          </ion-thumbnail>
-        </button>
         <ion-label>
+          <button>
+            <ion-thumbnail>
+              <img [src]="video.snippet.thumbnails.default.url" alt="thumbnail video"/>
+            </ion-thumbnail>
+          </button>
           <ion-title>
             <ion-text>
               <h2>
