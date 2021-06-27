@@ -18,8 +18,8 @@ export class LogInOutPage implements OnInit {
   ) { }
 
   checkboxs = {
-    isChecked1: false,
-    isChecked2: false
+    isChecked1: false
+    // isChecked2: false
   }
   currentAuthStatus$: Observable<any>
 
@@ -28,13 +28,8 @@ export class LogInOutPage implements OnInit {
   }
 
   loginGoogle() {
-    if(this.checkboxs.isChecked2){
-      this.auth.loginGoogle()
-      .then(res => console.log(res))
-    }
-    else {
-      console.log("acepte las condiciones")
-    }
+    this.auth.loginGoogle(this.checkboxs.isChecked1)
+    .then(res => {return res})
   }
 
   logoutGoogle() {

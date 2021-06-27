@@ -4,6 +4,7 @@ import { IonInfiniteScroll } from '@ionic/angular';
 
 import { Observable, merge, concat } from 'rxjs';
 
+import { AuthService } from 'src/app/services/auth.service';
 import { YoutubeDataApiService } from 'src/app/services/youtube-data-api.service';
 import { Video } from './../../interfaces/video'
 
@@ -21,12 +22,16 @@ export class VideosPage implements OnInit {
   urlYoutubeVideo: string = "https://www.youtube.com/watch?v="
 
   constructor(
+    private auth: AuthService,
     private activatedRoute: ActivatedRoute,
     private ytservice: YoutubeDataApiService
     ) { }
 
+  currentAuthStatus$: Observable<any>
+
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(() => {
+      this.currentAuthStatus$ = this.auth.authStatusListener()
       this.videosListOnline = this.ytservice.getVideos()
     })
     this.videosListOnline.subscribe(res => {
