@@ -25,10 +25,10 @@ export class HeaderComponent implements OnInit {
     this.currentAuthStatus$ = this.auth.authStatusListener()
     this.currentAuthStatus$.subscribe(
       res => {
-        console.log("TEST")
+        // console.log("TEST")
         if(res !== null && res !== undefined){
           this.userData = this.auth.getUserData();
-          console.log(this.userData)
+          // console.log(this.userData)
         }
       }
     )

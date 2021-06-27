@@ -35,7 +35,8 @@ export class VideosPage implements OnInit {
       this.videosListOnline = this.ytservice.getVideos()
     })
     this.videosListOnline.subscribe(res => {
-      console.log(res)
+      return res
+      // console.log(res)
     })
   }
 

@@ -1,3 +1,4 @@
+import { ComponentsModule } from './../../components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,6 +14,7 @@ import { TermsAndConditionsPage } from './terms-and-conditions.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     TermsAndConditionsPageRoutingModule
   ],
   declarations: [TermsAndConditionsPage]

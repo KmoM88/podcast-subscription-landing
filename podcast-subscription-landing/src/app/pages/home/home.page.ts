@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
+import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/interfaces/user';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -21,9 +26,24 @@ export class HomePage implements OnInit {
   url_avatar_tomas = "http://www.instagram.com/tomasquintinpalma/";
   url_avatar_canal = "http://www.youtube.com/channel/UCOpxYGU6whNOWd2LWzkFEKQ/featured";
 
-  constructor() { }
+  constructor(
+    private auth: AuthService
+  ) { }
+
+  currentAuthStatus$: Observable<any>
+  userData: User
 
   ngOnInit() {
+    this.currentAuthStatus$ = this.auth.authStatusListener()
+    this.currentAuthStatus$.subscribe(
+      res => {
+        // console.log("TEST")
+        if(res !== null && res !== undefined){
+          this.userData = this.auth.getUserData();
+          // console.log(this.userData)
+        }
+      }
+    )
   }
 
 }

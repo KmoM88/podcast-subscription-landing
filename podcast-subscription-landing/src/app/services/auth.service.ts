@@ -68,7 +68,7 @@ export class AuthService {
   authStatusListener(){
     this.auth.onAuthStateChanged((credential) => {
       if (credential){
-        console.log(credential);
+        // console.log(credential);
         // this.uid = credential.uid;
         // this.displayName = credential.displayName;
         // this.email = credential.email;
