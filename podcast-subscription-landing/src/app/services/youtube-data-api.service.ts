@@ -17,26 +17,43 @@ export class YoutubeDataApiService {
   apiKey = environment.apiKeyYoutube
   channelId = environment.channelId
   url = this.URI + 'search?order=date&key=' + this.apiKey + '&channelId=' + this.channelId + '&part=snippet,id&maxResults=15';
-  nextPageToken:string[] = []
+  nextPageToken: string[] = []
   videoSubject: BehaviorSubject<Video[]> = new BehaviorSubject(null)
 
   constructor(private http: HttpClient) { }
 
   videoSearch(url: string) {
     this.http.get<VideoList>(url)
-    .pipe(
-      map((res: VideoList) => {
-        if(res.nextPageToken !== null){
-          if(this.nextPageToken === null || !this.nextPageToken.includes(res.nextPageToken)){
-            this.nextPageToken.push(res.nextPageToken)
-            console.log(this.nextPageToken)
-            console.log(res.items)
-          }
-        }
-        return res.items
-      })
+    .subscribe(
+      (res: VideoList) => {
+        // if(res.nextPageToken !== null){
+        //   if(this.nextPageToken === null || !this.nextPageToken.includes(res.nextPageToken)){
+        //     this.nextPageToken.push(res.nextPageToken)
+        //     console.log(this.nextPageToken)
+        //     console.log(res.items)
+        //   }
+        // }
+        this.videoSubject.next(res.items)
+      },
+      (err: any) => {
+        this.videoSubject.error(err)
+      },
+      () => {
+        this.videoSubject.complete()
+      }
     )
-    .subscribe(this.videoSubject)
+    // .pipe(
+    //   map((res: VideoList) => {
+    //     if(res.nextPageToken !== null){
+    //       if(this.nextPageToken === null || !this.nextPageToken.includes(res.nextPageToken)){
+    //         this.nextPageToken.push(res.nextPageToken)
+    //         console.log(this.nextPageToken)
+    //         console.log(res.items)
+    //       }
+    //     }
+    //     return res.items
+    //   })
+    // ))
     }
 
     // updateSubject() {
@@ -55,13 +72,13 @@ export class YoutubeDataApiService {
       }
     }
 
-  // getVideos() {
-  //   return this.http.get<Video[]>('./assets/videoList/video-list.json')
-  //   .pipe(
-  //     map((response: Video[]) => {
-  //       return response;
-  //       }
-  //     )
-  //   )
-  // }
+  getVideos() {
+    return this.http.get<Video[]>('./assets/videoList/video-list.json')
+    .pipe(
+      map((response: Video[]) => {
+        return response;
+        }
+      )
+    )
+  }
 }

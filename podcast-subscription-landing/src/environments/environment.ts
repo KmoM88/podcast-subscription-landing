@@ -13,8 +13,8 @@ export const environment = {
     appId: "1:920768872768:web:9d9de81a95063d42323aa5",
     measurementId: "G-6CMBJELRH5"
   },
-  // apiKeyYoutube: "AIzaSyAon2Iq9G2r3bnV0muXwSaQsw9FbtA-1P4",
-  apiKeyYoutube: "AIzaSyBU6svv1LedbwUHN8Fpf64pJiKsb0rc_T0",
+  apiKeyYoutube: "AIzaSyAon2Iq9G2r3bnV0muXwSaQsw9FbtA-1P4",
+  // apiKeyYoutube: "AIzaSyBU6svv1LedbwUHN8Fpf64pJiKsb0rc_T0",
   channelId: "UCOpxYGU6whNOWd2LWzkFEKQ"
 };
 

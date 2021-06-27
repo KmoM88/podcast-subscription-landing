@@ -26,9 +26,11 @@ export class VideosPage implements OnInit {
     ) { }
 
   ngOnInit() {
-    // this.videosList = this.ytservice.getVideos();
     this.activatedRoute.paramMap.subscribe(() => {
-      this.videosListOnline = this.ytservice.getVideosOnline()
+      this.videosListOnline = this.ytservice.getVideos()
+    })
+    this.videosListOnline.subscribe(res => {
+      console.log(res)
     })
   }
 
