@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { ItemService } from './../../services/item.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { Item } from './../../interfaces/item';
 
 @Component({
@@ -16,10 +17,12 @@ export class MainPage implements OnInit {
   currentAuthStatus$: Observable<any>
 
   constructor(
+    private auth: AuthService,
     private itemService: ItemService
   ) { }
 
   ngOnInit() {
+    this.currentAuthStatus$ = this.auth.authStatusListener()
     this.menuItems = this.itemService.getMenuItems();
   }
 }

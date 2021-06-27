@@ -2,19 +2,31 @@
   {
     "icon":"home-outline",
     "name": "Home",
-    "public": "true",
+    "role": "public",
     "redirecTo": "/main"
   },
   {
     "icon": "play-circle-outline",
     "name": "Videos",
-    "public": "false",
+    "role": "public",
     "redirecTo": "/main/home/videos"
   },
   {
     "icon":"terminal-outline",
-    "name": "Log In/Log Out",
-    "public": "true",
+    "name": "Log In / Log Out",
+    "role": "public",
     "redirecTo": "/main/home/login"
+  },
+  {
+    "icon":"text-outline",
+    "name": "Newsletter",
+    "role": "logged",
+    "redirecTo": "/main/home/newsletter"
+  },
+  {
+    "icon":"chatbox-ellipses-outline",
+    "name": "Chat",
+    "role": "logged",
+    "redirecTo": "/main/home/chat"
   }
 ]

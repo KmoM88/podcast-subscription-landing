@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+
 import { MainPage } from './main.page';
 
 import { AngularFireAuthGuard, hasCustomClaim, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
@@ -30,6 +31,22 @@ const routes: Routes = [
       {
         path: 'home/videos',
         loadChildren: () => import('../videos/videos.module').then( m => m.VideosPageModule)
+      },
+      {
+        path: 'home/bases',
+        loadChildren: () => import('../bases/bases.module').then( m => m.BasesPageModule)
+      },
+      {
+        path: 'home/newsletter',
+        loadChildren: () => import('../newsletter/newsletter.module').then( m => m.NewsletterPageModule),
+        canActivate: [AngularFireAuthGuard],
+        data: { authGuardPipe: redirectUnauthorizedToLogin}
+      },
+      {
+        path: 'home/chat',
+        loadChildren: () => import('../chat/chat.module').then( m => m.ChatPageModule),
+        canActivate: [AngularFireAuthGuard],
+        data: { authGuardPipe: redirectUnauthorizedToLogin}
       }
     ]
   }

@@ -1,0 +1,20 @@
+[
+  {
+    "icon":"home-outline",
+    "name": "Home",
+    "public": "true",
+    "redirecTo": "/main"
+  },
+  {
+    "icon": "play-circle-outline",
+    "name": "Videos",
+    "public": "false",
+    "redirecTo": "/main/home/videos"
+  },
+  {
+    "icon":"terminal-outline",
+    "name": "Log In/Log Out",
+    "public": "true",
+    "redirecTo": "/main/home/login"
+  }
+]
